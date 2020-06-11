@@ -1,7 +1,11 @@
 // DEPENDENCIES
 const express = require("express");
+const path = require("path");
 
+// SERVER
 const app = express();
+
+// PORT
 const PORT = process.env.PORT || 8080;
 
 // ROUTER
@@ -11,7 +15,7 @@ const apiRoutes = require("./routes/api-routes");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-// app.use("/api", apiRoutes);
+app.use("/api/notes", apiRoutes);
 app.use("/", htmlRoutes);
 
 // LISTENER
