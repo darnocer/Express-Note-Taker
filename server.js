@@ -15,7 +15,7 @@ const apiRoutes = require("./routes/api-routes");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use("/api/notes", apiRoutes);
+app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 
 // LISTENER

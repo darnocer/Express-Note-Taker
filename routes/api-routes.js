@@ -1,14 +1,14 @@
 const router = require("express").Router();
 
-router.get("/api/notes", function (req, res) {
+router.get("/notes", function (req, res) {
   console.log(res.send("GET request"));
 });
 
-router.post("/api/notes", function (req, res) {
+router.post("/notes", function (req, res) {
   console.log(res.send("POST request"));
 });
 
-router.delete("/api/notes/:id", function (req, res) {
+router.delete("/notes/:id", function (req, res) {
   console.log(res.send("POST request"));
 });
 
