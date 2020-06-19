@@ -11,6 +11,7 @@ This application can be used to write, save, and delete notes. It uses an Expres
 ## Table of Contents
 
 - [Usage](#usage)
+- [Installation](#installation)
 - [Credits](#Credits)
 - [Questions](#questions)
 
@@ -22,6 +23,15 @@ This application can be used to write, save, and delete notes. It uses an Expres
 - Delete notes using the trash can icon.
 
 ![demo](public/assets/images/demo.gif)
+
+## Installation
+
+```
+Visit the deployed application to use the web version
+To use on local machine: fork repo and clone repo to machine
+node server.js to start express server
+visit http://localhost:8080/
+```
 
 ## Credits
 
