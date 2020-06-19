@@ -30,9 +30,9 @@ router.delete("/notes/:id", async function (req, res) {
 
   let newNotes = JSON.parse(notes).filter((item) => item.id !== id);
 
-  writeFile("db/db.json", JSON.stringify(newNotes)).then(() => {
-    res.json(newNotes);
-  });
+  await writeFile("db/db.json", JSON.stringify(newNotes));
+
+  res.json(newNotes);
 });
 
 module.exports = router;
