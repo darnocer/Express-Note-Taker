@@ -1,6 +1,6 @@
 # Express Note Taker
 
-![last commit](https://img.shields.io/github/last-commit/darnocer/https://github.com/darnocer/Express-Note-Taker?style=flat-square) ![license badge](https://img.shields.io/github/license/darnocer/https://github.com/darnocer/Express-Note-Taker?style=flat-square)
+![last commit](https://img.shields.io/github/last-commit/darnocer/Express-Note-Taker?style=flat-square) ![license badge](https://img.shields.io/github/license/darnocer/Express-Note-Taker?style=flat-square)
 
 ### URL: https://ancient-tundra-78234.herokuapp.com/
 
