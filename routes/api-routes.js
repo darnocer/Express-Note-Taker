@@ -29,13 +29,14 @@ router.delete("/notes/:id", async function (req, res) {
   let notes = await readFile("db/db.json", "utf8");
 
   let parsedNotes;
+
   try {
     parsedNotes = [].concat(JSON.parse(notes));
   } catch (err) {
     parsedNotes = [];
   }
 
-  let newNotes = JSON.parse(notes).filter((item) => item.id !== id);
+  let newNotes = parsedNotes.filter((item) => item.id !== id);
 
   await writeFile("db/db.json", JSON.stringify(newNotes));
 
