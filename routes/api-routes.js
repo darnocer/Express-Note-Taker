@@ -23,24 +23,28 @@ router.post("/notes", function (req, res) {
   });
 });
 
-router.delete("/notes/:id", async function (req, res) {
+router.delete("/notes/:id", function (req, res) {
   let id = req.params.id;
 
-  let notes = await readFile("db/db.json", "utf8");
+  readFile("db/db.json", "utf8")
+    .then((notes) => {
+      let parsedNotes;
 
-  let parsedNotes;
+      try {
+        parsedNotes = [].concat(JSON.parse(notes));
+      } catch (err) {
+        parsedNotes = [];
+      }
 
-  try {
-    parsedNotes = [].concat(JSON.parse(notes));
-  } catch (err) {
-    parsedNotes = [];
-  }
-
-  let newNotes = parsedNotes.filter((item) => item.id !== id);
-
-  await writeFile("db/db.json", JSON.stringify(newNotes));
-
-  await res.json({ ok: true });
+      return parsedNotes;
+    })
+    .then((notes) => notes.filter((note) => note.id !== id))
+    .then((filteredNotes) =>
+      writeFile("db/db.json", JSON.stringify(filteredNotes))
+    )
+    .then(() => {
+      res.json({ ok: true });
+    });
 });
 
 module.exports = router;
