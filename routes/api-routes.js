@@ -40,7 +40,7 @@ router.delete("/notes/:id", async function (req, res) {
 
   await writeFile("db/db.json", JSON.stringify(newNotes));
 
-  res.json(newNotes);
+  await res.json({ ok: true });
 });
 
 module.exports = router;
